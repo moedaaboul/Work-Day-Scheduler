@@ -1,6 +1,13 @@
 var currentDate = moment();
 $("#currentDay").text(currentDate.format("dddd, MMMM Do"));
 
+var time = Number(currentDate.format("HH"));
+
+// remove later
+time = 14;
+
+console.log("time", time);
+
 let timeSlots = [
   "9AM",
   "10AM",
@@ -22,10 +29,18 @@ timeSlots.forEach(function (value, index) {
   let button = document.createElement("button");
   let timeblock = document.createElement("div");
   header.setAttribute("class", "col hour");
-  input.setAttribute("class", "col-9 description");
   input.setAttribute("name", index);
   button.setAttribute("class", "col saveBtn");
   button.setAttribute("name", index);
+
+  if (time < index + 9) {
+    input.setAttribute("class", "future col-9 description");
+  } else if (time === index + 9) {
+    input.setAttribute("class", "present col-9 description");
+  } else if (time > index + 9) {
+    input.setAttribute("class", "past col-9 description");
+  }
+
   timeblock.setAttribute("class", "row time-block");
   button.textContent = "Submit";
   header.textContent = value;
