@@ -31,9 +31,9 @@ for (i = 0; i < 9; i++) {
   $(`<textarea class="col-9 hour" name="${i}">`).appendTo(
     `.time-block:eq(${i})`
   );
-  $(`<button class="col saveBtn" name="${i}"></button>`).appendTo(
-    `.time-block:eq(${i})`
-  );
+  $(
+    `<button class="col saveBtn" name="${i}"><i class="fas fa-save"></i></button>`
+  ).appendTo(`.time-block:eq(${i})`);
 }
 
 for (i = 0; i < 9; i++) {
