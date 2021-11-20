@@ -25,14 +25,12 @@ for (i = 0; i < 9; i++) {
 }
 
 for (i = 0; i < 9; i++) {
-  $(`<div class="col hour">${timeSlots[i]}</div>`).appendTo(
+  $(`<div class="col-1 hour">${timeSlots[i]}</div>`).appendTo(
     `.time-block:eq(${i})`
   );
-  $(`<textarea class="col-9 hour" name="${i}">`).appendTo(
-    `.time-block:eq(${i})`
-  );
+  $(`<textarea class="col-10" name="${i}">`).appendTo(`.time-block:eq(${i})`);
   $(
-    `<button class="col saveBtn" name="${i}"><i class="fas fa-save"></i></button>`
+    `<button class="col-1 saveBtn" name="${i}"><i class="fas fa-save"></i></button>`
   ).appendTo(`.time-block:eq(${i})`);
 }
 
