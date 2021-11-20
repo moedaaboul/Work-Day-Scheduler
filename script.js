@@ -4,7 +4,7 @@ $("#currentDay").text(currentDate.format("dddd, MMMM Do"));
 var time = Number(currentDate.format("HH"));
 
 // remove later
-time = 14;
+// time = 14;
 
 console.log("time", time);
 
@@ -20,51 +20,44 @@ let timeSlots = [
   "5PM",
 ];
 
-var container = document.querySelector(".container");
+for (i = 0; i < 9; i++) {
+  $(`<div class="row time-block"></div>`).appendTo(".container");
+}
 
-timeSlots.forEach(function (value, index) {
-  let header = document.createElement("div");
-  let input = document.createElement("textarea");
-  // alterantivly could use input element
-  let button = document.createElement("button");
-  let timeblock = document.createElement("div");
-  header.setAttribute("class", "col hour");
-  input.setAttribute("name", index);
-  button.setAttribute("class", "col saveBtn");
-  button.setAttribute("name", index);
-  timeblock.setAttribute("class", "row time-block");
-  button.textContent = "Submit";
-  header.textContent = value;
-  timeblock.appendChild(header);
-  timeblock.appendChild(input);
-  timeblock.appendChild(button);
-  container.appendChild(timeblock);
+for (i = 0; i < 9; i++) {
+  $(`<div class="col hour">${timeSlots[i]}</div>`).appendTo(
+    `.time-block:eq(${i})`
+  );
+  $(`<textarea class="col-9 hour" name="${i}">`).appendTo(
+    `.time-block:eq(${i})`
+  );
+  $(`<button class="col saveBtn" name="${i}"></button>`).appendTo(
+    `.time-block:eq(${i})`
+  );
+}
 
-  if (time < index + 9) {
-    input.setAttribute("class", "future col-9 description");
-    button.addEventListener("click", handleFormSubmit);
-  } else if (time === index + 9) {
-    input.setAttribute("class", "present col-9 description");
-    button.addEventListener("click", handleFormSubmit);
-  } else if (time > index + 9) {
-    input.setAttribute("class", "past col-9 description");
+for (i = 0; i < 9; i++) {
+  let variable = $("textarea").eq(i);
+  if (time < i + 9) {
+    variable.addClass("future");
+  } else if (time === i + 9) {
+    variable.addClass("present");
+  } else if (time > i + 9) {
+    variable.addClass("past");
   }
-});
+}
+
+$("button").on("click", handleFormSubmit);
 
 let test = 0;
 let arr = [];
-
-// let scheduleItem = document.querySelector(`input[name="${test}"]`);
 
 function handleFormSubmit(event) {
   event.preventDefault();
   var element = event.target;
   console.log(element.name);
   // select form element by its `name` attribute and get its value
-  //   var inputEl = $('input[name="shopping-input"]');
-  let scheduleItem = document.querySelector(
-    `textarea[name="${element.name}"]`
-  ).value;
+  let scheduleItem = $(`textarea[name="${element.name}"]`).val();
   //add .value to the line above;
   console.log(scheduleItem);
   arr[element.name] = scheduleItem;
@@ -77,9 +70,9 @@ function renderLastRegistered() {
   var localSchedule = localStorage.getItem("scheduleArray");
   arr = localSchedule.split(",");
   console.log("data", localSchedule);
-  // TODO :render it to the page
+  //render it to the page
   for (i = 0; i < 9; i++) {
-    document.querySelector(`textarea[name="${i}"]`).textContent = arr[i];
+    $(`textarea[name="${i}"]`).text(arr[i]);
   }
 }
 
