@@ -1,9 +1,9 @@
 // Obtains today's date from moment.js
-var currentDate = moment();
+const currentDate = moment();
 // formats todays date into desired format e.g. Saturday, November 20th
 $("#currentDay").text(currentDate.format("dddd, MMMM Do"));
 // Obtains current hour from moment.js
-var time = Number(currentDate.format("HH"));
+const time = Number(currentDate.format("HH"));
 
 // Define array with timeslot headers
 let timeSlots = [
@@ -19,7 +19,7 @@ let timeSlots = [
 ];
 
 // This is an index to align loop starting from zero as starts from 9AM.
-let index = 9;
+const startTime = 9;
 
 // Renders time-block elements within container by the nine hours we are considering i.e. from 9AM - 5PM
 for (i = 0; i < timeSlots.length; i++) {
@@ -39,13 +39,13 @@ for (i = 0; i < timeSlots.length; i++) {
 
 // Adjusts class depending on time of day
 for (i = 0; i < timeSlots.length; i++) {
-  let variable = $("textarea").eq(i);
-  if (time < i + index) {
-    variable.addClass("future");
-  } else if (time === i + index) {
-    variable.addClass("present");
-  } else if (time > i + index) {
-    variable.addClass("past");
+  const textElement = $("textarea").eq(i);
+  if (time < i + startTime) {
+    textElement.addClass("future");
+  } else if (time === i + startTime) {
+    textElement.addClass("present");
+  } else if (time > i + startTime) {
+    textElement.addClass("past");
   }
 }
 
@@ -60,7 +60,7 @@ function handleFormSubmit(event) {
   event.preventDefault();
   const element = event.target;
   // selects form element by its `name` attribute and get its value
-  let scheduleItem = $(`textarea[name="${element.name}"]`).val();
+  const scheduleItem = $(`textarea[name="${element.name}"]`).val();
   arr[element.name] = scheduleItem;
   localStorage.setItem("scheduleArray", JSON.stringify(arr));
 }
