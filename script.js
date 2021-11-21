@@ -6,7 +6,7 @@ $("#currentDay").text(currentDate.format("dddd, MMMM Do"));
 const time = Number(currentDate.format("HH"));
 
 // Define array with timeslot headers
-let timeSlots = [
+const timeSlots = [
   "9AM",
   "10AM",
   "11AM",

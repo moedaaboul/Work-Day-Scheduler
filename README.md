@@ -1,6 +1,6 @@
 # Work-Day-Scheduler
 
-A work day scheduler using JQUERY and Bootsrap.
+A work day scheduler using JQuery and Bootsrap.
 
 > Work-Day-Scheduler
 > Live demo [_here_](https://moedaaboul.github.io/Work-Day-Scheduler/).
@@ -29,7 +29,7 @@ Goal is to create an events daily planner so user can manage their time effectiv
 
 ## Technologies used
 
-- jQUERY
+- jQuery
 - JavaScript
 - Bootstrap
 - HTML
