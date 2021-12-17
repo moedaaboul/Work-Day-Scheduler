@@ -56,5 +56,4 @@ Created by [@moedaaboul](https://github.com/moedaaboul) - feel free to contact m
 
 ## License
 
-This work is licensed under a
-[MIT](https://github.com/moedaaboul/Work-Day-Scheduler/blob/main/LICENSE).
+This work is licensed under [MIT](https://github.com/moedaaboul/Work-Day-Scheduler/blob/main/LICENSE).
