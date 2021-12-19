@@ -31,7 +31,7 @@ Goal is to create an events daily planner so user can manage their time effectiv
 
 - jQuery
 - JavaScript
-- Bootstrap
+- Bootstrap CSS framework
 - HTML
 - CSS
 
