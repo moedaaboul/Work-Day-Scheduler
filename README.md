@@ -1,8 +1,8 @@
-# Work-Day-Scheduler
+# work-day-scheduler
 
 A work day scheduler using JQuery and Bootsrap.
 
-> Work-Day-Scheduler
+> work-day-scheduler
 > Live demo [_here_](https://moedaaboul.github.io/Work-Day-Scheduler/).
 
 ## Table of Contents
