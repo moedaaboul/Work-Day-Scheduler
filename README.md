@@ -29,7 +29,7 @@ Goal is to create an events daily planner so user can manage their time effectiv
 
 ## Technologies used
 
-- jQuery
+- jQuery library
 - JavaScript
 - Bootstrap CSS framework
 - HTML
