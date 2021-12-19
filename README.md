@@ -3,7 +3,7 @@
 A work day scheduler using JQuery and Bootsrap.
 
 > work-day-scheduler
-> Live demo [_here_](https://moedaaboul.github.io/Work-Day-Scheduler/).
+> Live demo [_here_](https://moedaaboul.github.io/work-day-scheduler/).
 
 ## Table of Contents
 
